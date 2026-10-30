@@ -1,0 +1,660 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>Black Oak Gym - بلاك أوك جيم</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;900&display=swap" rel="stylesheet">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              black: '#0a0a0a',
+              card: '#121212',
+              gold: '#d4af37',
+              goldHover: '#aa8c2c',
+              goldLight: 'rgba(212, 175, 55, 0.15)',
+              accent: '#ff3e3e',
+              gray: '#a0a0a0'
+            }
+          },
+          fontFamily: {
+            cairo: ['Cairo', 'sans-serif']
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    body {
+      font-family: 'Cairo', sans-serif;
+      background-color: #0a0a0a;
+      color: #ffffff;
+      -webkit-tap-highlight-color: transparent;
+    }
+    .gold-gradient {
+      background: linear-gradient(135deg, #f3e5ab 0%, #d4af37 50%, #aa8c2c 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .gold-bg-gradient {
+      background: linear-gradient(135deg, #d4af37 0%, #aa8c2c 100%);
+    }
+    .glass-card {
+      background: rgba(20, 20, 20, 0.75);
+      backdrop-filter: blur(12px);
+      border: 1px solid rgba(212, 175, 55, 0.2);
+    }
+    .gold-glow {
+      box-shadow: 0 0 20px rgba(212, 175, 55, 0.25);
+    }
+    .nav-item.active {
+      color: #d4af37;
+    }
+    .nav-item.active i {
+      transform: translateY(-3px);
+      filter: drop-shadow(0 4px 6px rgba(212, 175, 55, 0.4));
+    }
+    .no-scrollbar::-webkit-scrollbar {
+      display: none;
+    }
+    .no-scrollbar {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+    @keyframes loading {
+      0% { transform: translateX(-100%); }
+      100% { transform: translateX(100%); }
+    }
+  </style>
+</head>
+<body class="pb-24 select-none">
+
+  <!-- Splash Screen -->
+  <div id="splash-screen" class="fixed inset-0 z-50 bg-black flex flex-col items-center justify-center transition-opacity duration-700">
+    <div class="relative flex flex-col items-center">
+      <div class="w-20 h-20 rounded-full border-2 border-brand-gold flex items-center justify-center mb-4 shadow-[0_0_25px_rgba(212,175,55,0.4)] animate-pulse">
+        <i class="fa-solid fa-dumbbell text-3xl text-brand-gold"></i>
+      </div>
+      <h1 class="text-3xl font-black tracking-widest text-white mb-2">BLACK OAK</h1>
+      <p class="text-xs text-brand-gold tracking-widest uppercase font-semibold">بلاك أوك لتنسيق القوام</p>
+      
+      <div class="w-48 h-1 bg-gray-800 rounded-full mt-8 overflow-hidden relative">
+        <div class="h-full gold-bg-gradient w-full -translate-x-full" style="animation: loading 1.5s ease-in-out infinite;"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Top Mobile Header -->
+  <header class="sticky top-0 z-40 bg-brand-black/90 backdrop-blur-md border-b border-white/10 px-4 py-3 flex items-center justify-between">
+    <div class="flex items-center gap-3">
+      <div class="w-10 h-10 rounded-full bg-brand-goldLight border border-brand-gold/40 flex items-center justify-center">
+        <i class="fa-solid fa-dumbbell text-brand-gold text-lg"></i>
+      </div>
+      <div>
+        <h2 class="text-base font-bold text-white leading-none">BLACK OAK</h2>
+        <span class="text-[10px] text-brand-gold tracking-wider">BODY SHAPING GYM</span>
+      </div>
+    </div>
+    
+    <div class="flex items-center gap-2">
+      <a href="tel:+201000000000" class="w-9 h-9 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-white active:scale-95 transition">
+        <i class="fa-solid fa-phone text-xs"></i>
+      </a>
+      <a href="https://wa.me/201000000000" target="_blank" class="w-9 h-9 rounded-full bg-green-500/20 border border-green-500/40 flex items-center justify-center text-green-400 active:scale-95 transition">
+        <i class="fa-brands fa-whatsapp text-sm"></i>
+      </a>
+    </div>
+  </header>
+
+  <!-- Main Content Container -->
+  <main class="px-4 pt-4 max-w-md mx-auto">
+
+    <!-- TAB 1: HOME -->
+    <section id="tab-home" class="tab-content space-y-6">
+      <div class="relative rounded-3xl overflow-hidden border border-brand-gold/30 p-6 flex flex-col justify-end min-h-[220px] bg-gradient-to-t from-black via-black/60 to-transparent">
+        <div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1534438327276-14e5300c3a48?q=80&w=600&auto=format&fit=crop')] bg-cover bg-center -z-10 opacity-40"></div>
+        <span class="inline-block text-xs font-bold bg-brand-gold text-black px-2.5 py-1 rounded-full w-fit mb-2">تنسيق القوام المثالي</span>
+        <h1 class="text-2xl font-extrabold text-white leading-tight mb-2">اصنع النسخة الأفضل من جسمك في <span class="gold-gradient">بلاك أوك</span></h1>
+        <p class="text-xs text-gray-300 mb-4 line-clamp-2">برامج متخصصة في نحت الجسم، إزالة الدهون، وبناء العضلات النسقية بأحدث الأجهزة.</p>
+        
+        <button onclick="switchTab('tab-calc')" class="gold-bg-gradient text-black font-bold py-2.5 px-5 rounded-2xl text-xs flex items-center justify-center gap-2 active:scale-95 transition shadow-lg">
+          <span>احسب احتياج جسمك الآن</span>
+          <i class="fa-solid fa-calculator"></i>
+        </button>
+      </div>
+
+      <div class="grid grid-cols-2 gap-3">
+        <div onclick="switchTab('tab-workout')" class="glass-card p-4 rounded-2xl flex flex-col items-center text-center cursor-pointer active:scale-95 transition">
+          <div class="w-12 h-12 rounded-2xl bg-brand-goldLight text-brand-gold flex items-center justify-center text-xl mb-2">
+            <i class="fa-solid fa-person-running"></i>
+          </div>
+          <h3 class="text-sm font-bold text-white">برامج التنسيق</h3>
+          <p class="text-[10px] text-gray-400 mt-0.5">تمارين نحت وشد الجسم</p>
+        </div>
+
+        <div onclick="switchTab('tab-calc')" class="glass-card p-4 rounded-2xl flex flex-col items-center text-center cursor-pointer active:scale-95 transition">
+          <div class="w-12 h-12 rounded-2xl bg-brand-goldLight text-brand-gold flex items-center justify-center text-xl mb-2">
+            <i class="fa-solid fa-fire-flame-curved"></i>
+          </div>
+          <h3 class="text-sm font-bold text-white">حاسبة الدهون</h3>
+          <p class="text-[10px] text-gray-400 mt-0.5">حساب السعرات والماكروز</p>
+        </div>
+      </div>
+
+      <div class="space-y-3">
+        <h3 class="text-sm font-bold text-gray-300 uppercase tracking-wider flex items-center gap-2">
+          <span class="w-2 h-2 rounded-full bg-brand-gold"></span>
+          لماذا بلاك أوك لتنسيق القوام؟
+        </h3>
+
+        <div class="glass-card p-4 rounded-2xl flex items-center gap-4">
+          <div class="w-10 h-10 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center text-brand-gold shrink-0">
+            <i class="fa-solid fa-bullseye text-base"></i>
+          </div>
+          <div>
+            <h4 class="text-xs font-bold text-white">استهداف المناطق المستعصية</h4>
+            <p class="text-[11px] text-gray-400 mt-0.5">خطط تدريب تغطي نحت الخصر، شد البطن، وتقوية الظهر والأرداف.</p>
+          </div>
+        </div>
+
+        <div class="glass-card p-4 rounded-2xl flex items-center gap-4">
+          <div class="w-10 h-10 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center text-brand-gold shrink-0">
+            <i class="fa-solid fa-user-check text-base"></i>
+          </div>
+          <div>
+            <h4 class="text-xs font-bold text-white">متابعة دقيقة للانحناءات والقياسات</h4>
+            <p class="text-[11px] text-gray-400 mt-0.5">تركيزنا ليس فقط على الوزن، بل على شكل الجسم ونسبة الدهون والعضل.</p>
+          </div>
+        </div>
+
+        <div class="glass-card p-4 rounded-2xl flex items-center gap-4">
+          <div class="w-10 h-10 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center text-brand-gold shrink-0">
+            <i class="fa-solid fa-stopwatch text-base"></i>
+          </div>
+          <div>
+            <h4 class="text-xs font-bold text-white">مؤقت وأدوات تدريب ذكية</h4>
+            <p class="text-[11px] text-gray-400 mt-0.5">تايمر مدمج لضبط الراحة بين المجموعات لضمان أعلى حرق ممكن.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="glass-card p-5 rounded-3xl text-center space-y-3 border-brand-gold/30">
+        <h3 class="text-base font-bold text-white">جاهز لتبدأ رحلة التحول؟</h3>
+        <p class="text-xs text-gray-300">سجل الآن واحصل على جلسة تقييم قوام مجانية</p>
+        <a href="https://wa.me/201000000000?text=أحتاج%20تفاصيل%20الاشتراك%20في%20جيم%20بلاك%20أوك" target="_blank" class="block w-full py-3 rounded-2xl gold-bg-gradient text-black font-bold text-xs shadow-md active:scale-95 transition">
+          احجز جلستك المجانية عبر واتساب
+        </a>
+      </div>
+    </section>
+
+    <!-- TAB 2: CALCULATOR -->
+    <section id="tab-calc" class="tab-content hidden space-y-5">
+      <div class="text-center space-y-1">
+        <h2 class="text-xl font-black gold-gradient">حاسبة تنسيق القوام والماكروز</h2>
+        <p class="text-xs text-gray-400">احسب السعرات والماكروز الدقيقة للحصول على القوام المثالي</p>
+      </div>
+
+      <form id="body-form" onsubmit="calculateMacros(event)" class="glass-card p-5 rounded-3xl space-y-4">
+        <div>
+          <label class="block text-xs font-bold text-gray-300 mb-2">الجنس</label>
+          <div class="grid grid-cols-2 gap-2">
+            <label class="cursor-pointer">
+              <input type="radio" name="gender" value="male" checked class="peer hidden">
+              <div class="py-2.5 rounded-xl border border-white/10 bg-white/5 text-center text-xs font-bold text-gray-300 peer-checked:border-brand-gold peer-checked:bg-brand-goldLight peer-checked:text-brand-gold transition">
+                <i class="fa-solid fa-mars mr-1"></i> ذكر
+              </div>
+            </label>
+            <label class="cursor-pointer">
+              <input type="radio" name="gender" value="female" class="peer hidden">
+              <div class="py-2.5 rounded-xl border border-white/10 bg-white/5 text-center text-xs font-bold text-gray-300 peer-checked:border-brand-gold peer-checked:bg-brand-goldLight peer-checked:text-brand-gold transition">
+                <i class="fa-solid fa-venus mr-1"></i> أنثى
+              </div>
+            </label>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-3 gap-2">
+          <div>
+            <label class="block text-[11px] font-bold text-gray-300 mb-1">السن</label>
+            <input type="number" id="calc-age" value="25" required class="w-full bg-white/5 border border-white/10 rounded-xl p-2.5 text-center text-xs text-white focus:outline-none focus:border-brand-gold">
+          </div>
+          <div>
+            <label class="block text-[11px] font-bold text-gray-300 mb-1">الوزن (كجم)</label>
+            <input type="number" id="calc-weight" value="75" required class="w-full bg-white/5 border border-white/10 rounded-xl p-2.5 text-center text-xs text-white focus:outline-none focus:border-brand-gold">
+          </div>
+          <div>
+            <label class="block text-[11px] font-bold text-gray-300 mb-1">الطول (سم)</label>
+            <input type="number" id="calc-height" value="175" required class="w-full bg-white/5 border border-white/10 rounded-xl p-2.5 text-center text-xs text-white focus:outline-none focus:border-brand-gold">
+          </div>
+        </div>
+
+        <div>
+          <label class="block text-xs font-bold text-gray-300 mb-2">هدف تنسيق القوام</label>
+          <select id="calc-goal" class="w-full bg-black/60 border border-white/10 rounded-xl p-3 text-xs text-white focus:outline-none focus:border-brand-gold">
+            <option value="recomp">تنسيق قوام وإعادة هيكلة (Recomp)</option>
+            <option value="cut">نحت الجسم وخسارة الدهون (Cutting)</option>
+            <option value="lean_bulk">بناء عضل صافي بدون دهون (Lean Bulk)</option>
+          </select>
+        </div>
+
+        <div>
+          <label class="block text-xs font-bold text-gray-300 mb-2">مستوى النشاط</label>
+          <select id="calc-activity" class="w-full bg-black/60 border border-white/10 rounded-xl p-3 text-xs text-white focus:outline-none focus:border-brand-gold">
+            <option value="1.2">قليل النشاط (مكتبي)</option>
+            <option value="1.375">نشاط متوسط (تمارين 1-3 أيام)</option>
+            <option value="1.55" selected>نشاط عالي (تمارين 3-5 أيام)</option>
+            <option value="1.725">نشاط مكثف جداً (تمارين يومية)</option>
+          </select>
+        </div>
+
+        <button type="submit" class="w-full py-3 rounded-2xl gold-bg-gradient text-black font-extrabold text-xs shadow-lg active:scale-95 transition">
+          احسب الخطة الغذائية للجسم
+        </button>
+      </form>
+
+      <div id="calc-results" class="hidden glass-card p-5 rounded-3xl border-brand-gold/40 space-y-4">
+        <h3 class="text-sm font-bold text-center text-white border-b border-white/10 pb-2">نتائج تحليل قوامك</h3>
+        
+        <div class="grid grid-cols-2 gap-3 text-center">
+          <div class="p-3 bg-white/5 rounded-2xl border border-white/5">
+            <span class="text-[10px] text-gray-400 block">معدل الحرق الأساسي BMR</span>
+            <span id="res-bmr" class="text-lg font-black text-brand-gold">1650</span>
+            <span class="text-[9px] text-gray-400">سعرة</span>
+          </div>
+          <div class="p-3 bg-white/5 rounded-2xl border border-brand-gold/30">
+            <span class="text-[10px] text-gray-400 block">السعرات اليومية المستهدفة</span>
+            <span id="res-calories" class="text-lg font-black gold-gradient">2100</span>
+            <span class="text-[9px] text-gray-400">سعرة/يوم</span>
+          </div>
+        </div>
+
+        <div class="space-y-2 pt-2">
+          <div class="text-xs font-bold text-gray-300">توزيع المغذيات الكبرى (الماكروز):</div>
+          
+          <div class="space-y-2">
+            <div>
+              <div class="flex justify-between text-xs mb-1">
+                <span class="text-gray-300"><i class="fa-solid fa-drumstick-bite text-red-400 mr-1"></i> بروتين (بناء العضل)</span>
+                <span id="res-protein" class="font-bold text-white">150 جم</span>
+              </div>
+              <div class="w-full bg-white/10 h-1.5 rounded-full overflow-hidden">
+                <div class="bg-red-500 h-full w-[35%]"></div>
+              </div>
+            </div>
+
+            <div>
+              <div class="flex justify-between text-xs mb-1">
+                <span class="text-gray-300"><i class="fa-solid fa-bowl-rice text-amber-400 mr-1"></i> كربوهيدرات (طاقة)</span>
+                <span id="res-carbs" class="font-bold text-white">200 جم</span>
+              </div>
+              <div class="w-full bg-white/10 h-1.5 rounded-full overflow-hidden">
+                <div class="bg-amber-400 h-full w-[45%]"></div>
+              </div>
+            </div>
+
+            <div>
+              <div class="flex justify-between text-xs mb-1">
+                <span class="text-gray-300"><i class="fa-solid fa-wheat-awn text-green-400 mr-1"></i> دهون صحية (هرمونات)</span>
+                <span id="res-fats" class="font-bold text-white">55 جم</span>
+              </div>
+              <div class="w-full bg-white/10 h-1.5 rounded-full overflow-hidden">
+                <div class="bg-green-400 h-full w-[20%]"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <a href="https://wa.me/201000000000?text=أريد%20استلام%20نظام%20غذائي%20مخصص%20بناءً%20على%20نتائج%20الحاسبة" target="_blank" class="block text-center w-full py-2.5 rounded-xl border border-brand-gold text-brand-gold font-bold text-xs active:scale-95 transition">
+          احصل على جدول وجبات مخصص عبر واتساب
+        </a>
+      </div>
+    </section>
+
+    <!-- TAB 3: WORKOUTS -->
+    <section id="tab-workout" class="tab-content hidden space-y-5">
+      <div class="text-center space-y-1">
+        <h2 class="text-xl font-black gold-gradient">تمارين نحت وتنسيق القوام</h2>
+        <p class="text-xs text-gray-400">استخدم المؤقت المدمج لضبط الراحة بين المجموعات</p>
+      </div>
+
+      <div class="glass-card p-4 rounded-3xl border-brand-gold/30 text-center space-y-3">
+        <div class="flex items-center justify-between border-b border-white/10 pb-2">
+          <span class="text-xs font-bold text-brand-gold flex items-center gap-1.5">
+            <i class="fa-solid fa-stopwatch"></i> مؤقت الراحة التفاعلي
+          </span>
+          <span id="timer-display" class="text-2xl font-black font-mono text-white">00:45</span>
+        </div>
+
+        <div class="flex justify-center gap-2">
+          <button onclick="setTimer(30)" class="px-3 py-1.5 rounded-xl bg-white/5 border border-white/10 text-xs text-gray-300 hover:border-brand-gold active:scale-95 transition">30 ثانية</button>
+          <button onclick="setTimer(45)" class="px-3 py-1.5 rounded-xl bg-white/5 border border-white/10 text-xs text-gray-300 hover:border-brand-gold active:scale-95 transition">45 ثانية</button>
+          <button onclick="setTimer(60)" class="px-3 py-1.5 rounded-xl bg-white/5 border border-white/10 text-xs text-gray-300 hover:border-brand-gold active:scale-95 transition">60 ثانية</button>
+          <button onclick="setTimer(90)" class="px-3 py-1.5 rounded-xl bg-white/5 border border-white/10 text-xs text-gray-300 hover:border-brand-gold active:scale-95 transition">90 ثانية</button>
+        </div>
+
+        <div class="flex gap-2">
+          <button id="start-btn" onclick="startTimer()" class="flex-1 py-2 rounded-xl gold-bg-gradient text-black font-bold text-xs active:scale-95 transition">ابدأ المؤقت</button>
+          <button onclick="resetTimer()" class="px-4 py-2 rounded-xl bg-white/10 text-white font-bold text-xs active:scale-95 transition">إعادة ضبط</button>
+        </div>
+      </div>
+
+      <div class="space-y-3">
+        <h3 class="text-xs font-bold text-gray-300">مناطق التركيز لتنسيق القوام</h3>
+
+        <div class="glass-card rounded-2xl overflow-hidden p-3 flex gap-3 items-center">
+          <img src="https://images.unsplash.com/photo-1517838277536-f5f99be501cd?q=80&w=200&auto=format&fit=crop" class="w-16 h-16 rounded-xl object-cover shrink-0" alt="Core">
+          <div class="flex-1">
+            <h4 class="text-xs font-bold text-white">شد وتقسيم البطن والخصر</h4>
+            <p class="text-[10px] text-gray-400 mt-0.5">تمارين تستهدف الدهون العنيدة وإبراز عضلات البطن.</p>
+            <span class="inline-block mt-1 text-[9px] bg-brand-goldLight text-brand-gold px-2 py-0.5 rounded-md font-bold">4 مجموعات × 15 تكرار</span>
+          </div>
+        </div>
+
+        <div class="glass-card rounded-2xl overflow-hidden p-3 flex gap-3 items-center">
+          <img src="https://images.unsplash.com/photo-1581009146145-b5ef050c2e1e?q=80&w=200&auto=format&fit=crop" class="w-16 h-16 rounded-xl object-cover shrink-0" alt="Upper Body">
+          <div class="flex-1">
+            <h4 class="text-xs font-bold text-white">نحت الظهر والأكتاف (V-Shape)</h4>
+            <p class="text-[10px] text-gray-400 mt-0.5">إعطاء المظهر المتناسق والجذاب للجزء العلوي من الجسم.</p>
+            <span class="inline-block mt-1 text-[9px] bg-brand-goldLight text-brand-gold px-2 py-0.5 rounded-md font-bold">3 مجموعات × 12 تكرار</span>
+          </div>
+        </div>
+
+        <div class="glass-card rounded-2xl overflow-hidden p-3 flex gap-3 items-center">
+          <img src="https://images.unsplash.com/photo-1574680096145-d05b474e2155?q=80&w=200&auto=format&fit=crop" class="w-16 h-16 rounded-xl object-cover shrink-0" alt="Lower Body">
+          <div class="flex-1">
+            <h4 class="text-xs font-bold text-white">رفع وشد الجزء السفلي والأرداف</h4>
+            <p class="text-[10px] text-gray-400 mt-0.5">تقوية الأرداف والأفخاذ وتنسيق انحناءات الجسم السفلي.</p>
+            <span class="inline-block mt-1 text-[9px] bg-brand-goldLight text-brand-gold px-2 py-0.5 rounded-md font-bold">4 مجموعات × 12 تكرار</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TAB 4: PRICING -->
+    <section id="tab-plans" class="tab-content hidden space-y-5">
+      <div class="text-center space-y-1">
+        <h2 class="text-xl font-black gold-gradient">خطط وعروض الاشتراكات</h2>
+        <p class="text-xs text-gray-400">اختر الخطة المناسبة لتحقيق هدفك في أسرع وقت</p>
+      </div>
+
+      <div class="space-y-4">
+        <div class="glass-card p-5 rounded-3xl space-y-3 relative overflow-hidden border-white/10">
+          <div class="flex justify-between items-start">
+            <div>
+              <h3 class="text-base font-bold text-white">اشتراك شهر (أساسي)</h3>
+              <p class="text-[11px] text-gray-400">لتجربة خدمات الجيم وبداية التغيير</p>
+            </div>
+            <span class="text-lg font-black text-white">600 <span class="text-xs font-normal text-gray-400">ج.م</span></span>
+          </div>
+          <ul class="text-xs text-gray-300 space-y-2 pt-1 border-t border-white/10">
+            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-gold"></i> استخدام كافّة الأجهزة الرياضية</li>
+            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-gold"></i> تصميم برنامج تدريبي أولي</li>
+            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-gold"></i> متابعة قياسات الجسم اسبوعياً</li>
+          </ul>
+          <a href="https://wa.me/201000000000?text=أريد%20الاشتراك%20في%20الباقة%20الشهرية" target="_blank" class="block text-center w-full py-2.5 rounded-xl bg-white/10 text-white font-bold text-xs active:scale-95 transition">اشترك الآن</a>
+        </div>
+
+        <div class="glass-card p-5 rounded-3xl space-y-3 relative overflow-hidden border-brand-gold gold-glow">
+          <div class="absolute -left-8 top-3 bg-brand-gold text-black font-black text-[9px] px-8 py-1 rotate-[320deg]">
+            الأكثر طلباً
+          </div>
+          <div class="flex justify-between items-start">
+            <div>
+              <h3 class="text-base font-bold text-white">باقة 3 شهور (تنسيق القوام)</h3>
+              <p class="text-[11px] text-brand-gold">المدة المثالية لرؤية تغيير جذري</p>
+            </div>
+            <span class="text-xl font-black gold-gradient">1500 <span class="text-xs font-normal text-gray-400">ج.م</span></span>
+          </div>
+          <ul class="text-xs text-gray-300 space-y-2 pt-1 border-t border-white/10">
+            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-gold"></i> جميع مميزات الاشتراك الأساسي</li>
+            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-gold"></i> نظام غذائي مخصص لتنسيق القوام</li>
+            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-gold"></i> جلسة InBody مجانية شهرياً</li>
+            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-gold"></i> دعوة صديق مجانية مرتين شهرياً</li>
+          </ul>
+          <a href="https://wa.me/201000000000?text=أريد%20الاشتراك%20في%20باقة%20تنسيق%20القوام%203%20شهور" target="_blank" class="block text-center w-full py-2.5 rounded-xl gold-bg-gradient text-black font-extrabold text-xs shadow-md active:scale-95 transition">احصل على العرض المميز</a>
+        </div>
+
+        <div class="glass-card p-5 rounded-3xl space-y-3 relative overflow-hidden border-white/10">
+          <div class="flex justify-between items-start">
+            <div>
+              <h3 class="text-base font-bold text-white">التدريب الشخصي (PT)</h3>
+              <p class="text-[11px] text-gray-400">مدرب خاص معك خطوة بخطوة</p>
+            </div>
+            <span class="text-lg font-black text-white">1200 <span class="text-xs font-normal text-gray-400">ج.م/شهر</span></span>
+          </div>
+          <ul class="text-xs text-gray-300 space-y-2 pt-1 border-t border-white/10">
+            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-gold"></i> 12 جلسة خاصة مع كابتن محترف</li>
+            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-gold"></i> متابعة دقيقة للتكنيك والتغذية اليومية</li>
+            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-gold"></i> نتائج مضاعفة وسريعة</li>
+          </ul>
+          <a href="https://wa.me/201000000000?text=أريد%20معرفة%20تفاصيل%20التدريب%20الشخصي" target="_blank" class="block text-center w-full py-2.5 rounded-xl bg-white/10 text-white font-bold text-xs active:scale-95 transition">احجز مع مدربك الخاص</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- TAB 5: CONTACT -->
+    <section id="tab-contact" class="tab-content hidden space-y-5">
+      <div class="text-center space-y-1">
+        <h2 class="text-xl font-black gold-gradient">تواصل مع بلاك أوك جيم</h2>
+        <p class="text-xs text-gray-400">نحن هنا للإجابة على جميع استفساراتك</p>
+      </div>
+
+      <div class="glass-card p-5 rounded-3xl space-y-4">
+        <div class="flex items-center gap-3">
+          <div class="w-10 h-10 rounded-xl bg-brand-goldLight text-brand-gold flex items-center justify-center text-base shrink-0">
+            <i class="fa-solid fa-location-dot"></i>
+          </div>
+          <div>
+            <h4 class="text-xs font-bold text-white">العنوان</h4>
+            <p class="text-[11px] text-gray-400">الفرع الرئيسي - شارع الجيم، بجوار الكورنيش</p>
+          </div>
+        </div>
+
+        <div class="flex items-center gap-3">
+          <div class="w-10 h-10 rounded-xl bg-brand-goldLight text-brand-gold flex items-center justify-center text-base shrink-0">
+            <i class="fa-solid fa-clock"></i>
+          </div>
+          <div>
+            <h4 class="text-xs font-bold text-white">مواعيد العمل</h4>
+            <p class="text-[11px] text-gray-400">يومياً من 6:00 صباحاً حتى 12:00 منتصف الليل</p>
+            <p class="text-[10px] text-brand-gold mt-0.5">فترات للسيدات وفترات للرجال متوفرة</p>
+          </div>
+        </div>
+
+        <div class="flex items-center gap-3">
+          <div class="w-10 h-10 rounded-xl bg-brand-goldLight text-brand-gold flex items-center justify-center text-base shrink-0">
+            <i class="fa-solid fa-phone"></i>
+          </div>
+          <div>
+            <h4 class="text-xs font-bold text-white">أرقام التواصل</h4>
+            <p class="text-[11px] text-gray-400" dir="ltr">+20 100 000 0000</p>
+          </div>
+        </div>
+
+        <div class="pt-2 grid grid-cols-2 gap-2">
+          <a href="https://wa.me/201000000000" target="_blank" class="py-3 rounded-2xl bg-green-600/30 border border-green-500/50 text-green-400 font-bold text-xs flex items-center justify-center gap-2 active:scale-95 transition">
+            <i class="fa-brands fa-whatsapp text-base"></i> واتساب مباشر
+          </a>
+          <a href="tel:+201000000000" class="py-3 rounded-2xl bg-white/10 border border-white/10 text-white font-bold text-xs flex items-center justify-center gap-2 active:scale-95 transition">
+            <i class="fa-solid fa-phone text-xs"></i> اتصل الآن
+          </a>
+        </div>
+      </div>
+
+      <div class="glass-card p-3 rounded-3xl overflow-hidden border-white/10 text-center">
+        <div class="w-full h-36 rounded-2xl bg-white/5 border border-white/10 flex flex-col items-center justify-center gap-2 text-gray-400">
+          <i class="fa-solid fa-map-location-dot text-3xl text-brand-gold"></i>
+          <span class="text-xs font-bold text-white">خريطة الفرع</span>
+          <a href="https://maps.google.com" target="_blank" class="text-[10px] text-brand-gold underline">افتح الموقع على خرائط جوجل</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Bottom App Navigation Bar -->
+  <nav class="fixed bottom-0 inset-x-0 bg-brand-black/95 backdrop-blur-lg border-t border-white/10 z-40 px-3 py-2">
+    <div class="max-w-md mx-auto flex justify-between items-center text-center">
+      
+      <button onclick="switchTab('tab-home')" id="nav-tab-home" class="nav-item active flex-1 flex flex-col items-center gap-1 text-gray-400 transition">
+        <i class="fa-solid fa-house text-lg transition-transform duration-300"></i>
+        <span class="text-[10px] font-bold">الرئيسية</span>
+      </button>
+
+      <button onclick="switchTab('tab-workout')" id="nav-tab-workout" class="nav-item flex-1 flex flex-col items-center gap-1 text-gray-400 transition">
+        <i class="fa-solid fa-dumbbell text-lg transition-transform duration-300"></i>
+        <span class="text-[10px] font-bold">التمارين</span>
+      </button>
+
+      <button onclick="switchTab('tab-calc')" id="nav-tab-calc" class="nav-item flex-1 flex flex-col items-center gap-1 text-gray-400 transition">
+        <div class="w-10 h-10 -mt-5 rounded-full gold-bg-gradient text-black flex items-center justify-center shadow-[0_0_15px_rgba(212,175,55,0.5)] active:scale-90 transition">
+          <i class="fa-solid fa-calculator text-base"></i>
+        </div>
+        <span class="text-[10px] font-bold text-brand-gold mt-0.5">الحاسبة</span>
+      </button>
+
+      <button onclick="switchTab('tab-plans')" id="nav-tab-plans" class="nav-item flex-1 flex flex-col items-center gap-1 text-gray-400 transition">
+        <i class="fa-solid fa-tags text-lg transition-transform duration-300"></i>
+        <span class="text-[10px] font-bold">الاشتراكات</span>
+      </button>
+
+      <button onclick="switchTab('tab-contact')" id="nav-tab-contact" class="nav-item flex-1 flex flex-col items-center gap-1 text-gray-400 transition">
+        <i class="fa-solid fa-address-book text-lg transition-transform duration-300"></i>
+        <span class="text-[10px] font-bold">التواصل</span>
+      </button>
+
+    </div>
+  </nav>
+
+  <!-- JavaScript Logic -->
+  <script>
+    window.addEventListener('load', () => {
+      setTimeout(() => {
+        const splash = document.getElementById('splash-screen');
+        splash.classList.add('opacity-0');
+        setTimeout(() => splash.style.display = 'none', 700);
+      }, 1200);
+    });
+
+    function switchTab(tabId) {
+      document.querySelectorAll('.tab-content').forEach(el => el.classList.add('hidden'));
+      document.getElementById(tabId).classList.remove('hidden');
+
+      document.querySelectorAll('.nav-item').forEach(el => el.classList.remove('active'));
+      const activeNav = document.getElementById('nav-' + tabId);
+      if (activeNav) {
+        activeNav.classList.add('active');
+      }
+
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    function calculateMacros(e) {
+      e.preventDefault();
+
+      const gender = document.querySelector('input[name="gender"]:checked').value;
+      const age = parseFloat(document.getElementById('calc-age').value) || 25;
+      const weight = parseFloat(document.getElementById('calc-weight').value) || 70;
+      const height = parseFloat(document.getElementById('calc-height').value) || 170;
+      const goal = document.getElementById('calc-goal').value;
+      const activity = parseFloat(document.getElementById('calc-activity').value);
+
+      let bmr = (10 * weight) + (6.25 * height) - (5 * age);
+      if (gender === 'male') {
+        bmr += 5;
+      } else {
+        bmr -= 161;
+      }
+
+      let tdee = bmr * activity;
+      let targetCalories = tdee;
+
+      if (goal === 'cut') {
+        targetCalories -= 400;
+      } else if (goal === 'lean_bulk') {
+        targetCalories += 300;
+      }
+
+      const proteinGrams = Math.round(weight * 2.0);
+      const proteinCalories = proteinGrams * 4;
+
+      const fatCalories = targetCalories * 0.25;
+      const fatGrams = Math.round(fatCalories / 9);
+
+      const carbCalories = targetCalories - (proteinCalories + fatCalories);
+      const carbGrams = Math.round(Math.max(carbCalories / 4, 50));
+
+      document.getElementById('res-bmr').textContent = Math.round(bmr);
+      document.getElementById('res-calories').textContent = Math.round(targetCalories);
+      document.getElementById('res-protein').textContent = proteinGrams + ' جم';
+      document.getElementById('res-carbs').textContent = carbGrams + ' جم';
+      document.getElementById('res-fats').textContent = fatGrams + ' جم';
+
+      document.getElementById('calc-results').classList.remove('hidden');
+    }
+
+    let timerInterval = null;
+    let totalSeconds = 45;
+    let currentSeconds = 45;
+    let isRunning = false;
+
+    function updateTimerDisplay() {
+      const mins = Math.floor(currentSeconds / 60);
+      const secs = currentSeconds % 60;
+      document.getElementById('timer-display').textContent = 
+        `${mins.toString().padStart(2, '0')}:${secs.toString().padStart(2, '0')}`;
+    }
+
+    function setTimer(seconds) {
+      clearInterval(timerInterval);
+      isRunning = false;
+      totalSeconds = seconds;
+      currentSeconds = seconds;
+      updateTimerDisplay();
+      document.getElementById('start-btn').textContent = 'ابدأ المؤقت';
+    }
+
+    function startTimer() {
+      if (isRunning) {
+        clearInterval(timerInterval);
+        isRunning = false;
+        document.getElementById('start-btn').textContent = 'استئناف';
+        return;
+      }
+
+      if (currentSeconds <= 0) currentSeconds = totalSeconds;
+
+      isRunning = true;
+      document.getElementById('start-btn').textContent = 'إيقاف مؤقت';
+
+      timerInterval = setInterval(() => {
+        currentSeconds--;
+        updateTimerDisplay();
+
+        if (currentSeconds <= 0) {
+          clearInterval(timerInterval);
+          isRunning = false;
+          document.getElementById('start-btn').textContent = 'ابدأ المؤقت';
+          if ('vibrate' in navigator) {
+            navigator.vibrate([200, 100, 200]);
+          }
+          alert('انتهت فترة الراحة! ابدأ المجموعة التالية 💪');
+        }
+      }, 1000);
+    }
+
+    function resetTimer() {
+      clearInterval(timerInterval);
+      isRunning = false;
+      currentSeconds = totalSeconds;
+      updateTimerDisplay();
+      document.getElementById('start-btn').textContent = 'ابدأ المؤقت';
+    }
+  </script>
+</body>
+</html>
